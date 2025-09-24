@@ -81,3 +81,19 @@ function revisarEstado() {
 simularPasoDelTiempo(5);
 revisarEstado();
 
+let mascotaViva = true;
+
+while (mascotaViva) {
+    mostrarEstado();
+    revisarEstado();
+    
+    hambre -= 5;
+    felicidad -= 5;
+    energia -= 5;
+    
+    if (hambre <= 0 || felicidad <= 0) {
+        mascotaViva = false;
+        console.log("Juego terminado");
+    }
+}
+
