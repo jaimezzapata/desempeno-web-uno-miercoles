@@ -39,16 +39,16 @@ const simularPasoDelTiempo = (horas) => {
         if (felicidad < 0) felicidad = 0;
         if (energia < 0) energia = 0;
 
-        console.log(`⏳ Ha pasado ${i} hora(s)...`);
+        console.log(`Ha pasado ${i} hora(s)...`);
         mostrarEstado();
     }
 };
 
 function revisarEstado() {
     if (hambre < 20) {
-        console.log("⚠️ ¡Tengo mucha hambre!");
+        console.log("¡Tengo mucha hambre!");
         if (energia < 15) {
-            console.log("😴 Y estoy muy cansado...");
+            console.log("Y estoy muy cansado...");
         }
     }
 
@@ -65,18 +65,46 @@ function revisarEstado() {
 
     switch (nivelFelicidad) {
         case 1:
-            console.log("😀 ¡Estoy muy feliz! :D");
+            console.log("¡Estoy muy feliz!");
             break;
         case 2:
-            console.log("🙂 Me siento bien, pero podríamos jugar.");
+            console.log("Me siento bien, pero podríamos jugar.");
             break;
         case 3:
-            console.log("😕 Me siento un poco triste...");
+            console.log("Me siento un poco triste...");
             break;
         default:
-            console.log("💔 Necesito atención.");
+            console.log("Necesito atención.");
     }
 }
 
 simularPasoDelTiempo(5);
 revisarEstado();
+let mascotaViva = true;
+let contadorHoras = 0;
+
+while (mascotaViva) {
+    mostrarEstado();
+    revisarEstado();
+
+    hambre -= 4;
+    felicidad -= 2;
+    energia -= 3;
+
+    if (hambre < 0) hambre = 0;
+    if (felicidad < 0) felicidad = 0;
+    if (energia < 0) energia = 0;
+
+    contadorHoras++;
+    console.log(`⏰ Hora de vida: ${contadorHoras}`);
+
+    if (hambre === 0 || felicidad === 0) {
+        mascotaViva = false;
+        console.log("Juego terminado... tu mascota no resistió.");
+    }
+
+    if (contadorHoras > 20) {
+        mascotaViva = false;
+        console.log("Fin de la simulación (20 horas).");
+    }
+}
