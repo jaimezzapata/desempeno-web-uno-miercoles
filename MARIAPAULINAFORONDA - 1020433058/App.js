@@ -9,3 +9,19 @@ function mostrarEstado() {
 
 mostrarEstado();
 
+// Tercera entrega
+const recibirDano = function(cantidadDano) {
+  vidaHeroe -= cantidadDano;
+  if (vidaHeroe < 0) vidaHeroe = 0;
+  console.log(`El héroe recibió ${cantidadDano} de daño. Vida restante: ${vidaHeroe}`);
+};
+
+const ganarExperiencia = (cantidadExperiencia) => {
+  experienciaHeroe += cantidadExperiencia;
+  console.log(`¡El héroe ganó ${cantidadExperiencia} de experiencia! Total: ${experienciaHeroe}`);
+};
+
+recibirDano(30);
+ganarExperiencia(48);
+mostrarEstado();
+ 
