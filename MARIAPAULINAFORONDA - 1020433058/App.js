@@ -49,3 +49,37 @@ function verificarNivel() {
 
 entrenar(10);
 verificarNivel();
+
+// Cuarta entrega
+
+function elegirEnemigo(tipo) {
+  switch (tipo) {
+    case 1:
+      recibirDano(10);
+      console.log("Te enfrentas a un Pilar débil.");
+      break;
+    case 2:
+      recibirDano(25);
+      console.log("Un Tanjiro te ha atacado.");
+      break;
+    case 3:
+      recibirDano(50);
+      console.log("¡Peligro! Un Dragón aparece.");
+      break;
+    default:
+      console.log("No apareció ningún enemigo.");
+  }
+}
+
+function aventura() {
+  while (vidaHeroe > 0) {
+    const tipo = Math.floor(Math.random() * 3) + 1; // 1,2 o 3
+    elegirEnemigo(tipo);
+    ganarExperiencia(15);
+    mostrarEstado();
+    console.log("======================");
+  }
+  console.log("El héroe ha caído en batalla. Fin de la aventura.");
+}
+
+aventura();
