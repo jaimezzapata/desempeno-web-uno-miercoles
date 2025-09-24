@@ -32,8 +32,8 @@ A continuación, encontrarás la lista de ejercicios disponibles. Haz clic en el
 
 | Ejercicio                                 |
 | :---------------------------------------- |
-| 📄 **[EJERCICIO_UNO](./EJERCICIO_UNO)**   |
-| 📄 **[EJERCICIO_DOS](./EJERCICIO_DOS)**   |
-| 📄 **[EJERCICIO_TRES](./EJERCICIO_TRES)** |
+| 📄 **[EJERCICIO_UNO](EJERCICIO_UNO)**   |
+| 📄 **[EJERCICIO_DOS](EJERCICIO_DOS)**   |
+| 📄 **[EJERCICIO_TRES](EJERCICIO_TRES)** |
 
 ---
