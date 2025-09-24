@@ -22,6 +22,8 @@ Sigue estas fases en orden. Al finalizar cada una, deberás realizar un commit e
 En esta primera etapa, crearemos la base de nuestro proyecto y definiremos las características principales de nuestra mascota.
 
 ### Prepara tu entorno:
+-   Forkear este repositorio
+-   Clonar este repositorio
 -   En el repositorio clonado vas a crear una carpeta llamada asi: CC- NOMBRE-COMPLETO
     - CC: Documento de identidad
     - NOMBRE-COMPLETO: Su nombre completo
@@ -29,7 +31,7 @@ En esta primera etapa, crearemos la base de nuestro proyecto y definiremos las c
 -   Enlaza `app.js` en tu archivo `index.html`.
 
 ### Define las variables de estado:
--   En `app.js`, declara tres variables para guardar el estado de tu mascota: `hambre` (inicia en 50), `felicidad` (inicia en 50) y `energia` (inicia en 50). Estos valores representarán porcentajes.
+-   En `app.js`, declara tres variables para guardar el estado de tu mascota: `nombreMascota` (se depe pedir por consola), `hambre` (inicia en 50), `felicidad` (inicia en 50) y `energia` (inicia en 50). Estos valores representarán porcentajes.
 ### Crea la función para mostrar el estado (Función Declarativa):
 -   Desarrolla una función declarativa llamada `mostrarEstado()`.
 -   Esta función no recibirá parámetros.
