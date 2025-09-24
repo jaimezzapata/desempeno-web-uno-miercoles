@@ -14,4 +14,28 @@ function mostrarInventario() {
 // Llamada a la función para mostrar el inventario
 mostrarInventario()
 
+// Función para registrar una venta
+const registrarVenta = function(cantidadVendida) {
+    if (cantidadVendida <= stockProducto) {
+        if (cantidadVendida >= stockProducto) {
+            stockProducto -= cantidadVendida
+            console.log("Venta exitosa. Se vendieron " + cantidadVendida + " unidades de " + nombreProducto + ". Stock restante: " + stockProducto)
+        }
+    } else {
+        console.log("Stock insuficiente para completar la venta.")
+    }
+}
+
+// Función para reponer stock
+const reponerStock = (cantidadRepuesta) => {
+    stockProducto += cantidadRepuesta
+    console.log("Stock repuesto. Se añadieron " + cantidadRepuesta + " unidades. Stock actual: " + stockProducto)
+}
+
+// Llamando la función registrarVenta
+registrarVenta(3)
+// Llamando la función reponerStock
+reponerStock(5)
+// Mostrar el inventario actualizado
+mostrarInventario()
 
