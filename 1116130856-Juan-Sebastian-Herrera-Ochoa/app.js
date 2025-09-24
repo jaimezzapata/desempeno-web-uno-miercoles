@@ -21,8 +21,6 @@ const registrarVenta = function(cantidadVendida) {
             stockProducto -= cantidadVendida
             console.log("Venta exitosa. Se vendieron " + cantidadVendida + " unidades de " + nombreProducto + ". Stock restante: " + stockProducto)
         }
-    } else {
-        console.log("Stock insuficiente para completar la venta.")
     }
 }
 
@@ -38,4 +36,29 @@ registrarVenta(3)
 reponerStock(5)
 // Mostrar el inventario actualizado
 mostrarInventario()
+
+//función para simular varias ventas
+const simularVentas = (numeroDeVentas) => {
+    for (let i = 0; i < numeroDeVentas; i++) {
+        registrarVenta(1)
+    }
+}
+
+// función alerta de stock
+function revisarStock() {
+    if (stockProducto === 0) {
+        console.log("ALERTA CRÍTICA: Producto agotado.")
+    } else if (stockProducto < 5 && stockProducto > 0) {
+        console.log("Advertencia: Stock bajo. Quedan solo " + stockProducto + " unidades.")
+        if (precioProducto > 1000) {
+            console.log("Este es un producto de alto valor. Sugerir reposición inmediata.")
+        }
+    } else console.log("El stock del producto se encuentra en un nivel saludable.")
+}
+
+// llamando la función simularVentas
+simularVentas(7)
+
+// llamando la función revisarStock
+revisarStock()
 
