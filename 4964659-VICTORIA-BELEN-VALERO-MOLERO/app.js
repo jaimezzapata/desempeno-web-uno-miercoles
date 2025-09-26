@@ -44,7 +44,7 @@ const jugar = (puntosFelicidad) => {
 
 const simularPasoDelTiempo = (horas) => {
     for (let i = 1; i <= horas; i++) {
-        
+
         hambre -= 5;
         felicidad -= 3;
         energia -= 2;
@@ -54,25 +54,25 @@ const simularPasoDelTiempo = (horas) => {
         if (energia < 0) energia = 0;
 
     }
-    console.log("Han pasado " + horas + " horas. Estado actualizado:");
+    console.log("Han pasado " + horas + " horas.");
     mostrarEstado();
-}; 
+};
 
 
 function revisarEstado() {
     if (hambre < 20) {
         console.log("¡Tengo mucha hambre!");
-        
+
         if (energia < 15) {
             console.log("Y estoy muy cansado...");
         }
     }
 }
 
-
+// revisarEstado();
 
 function evaluarFelicidad() {
-    let nivel; 
+    let nivel;
 
     if (felicidad > 80) {
         nivel = 1;
@@ -81,7 +81,7 @@ function evaluarFelicidad() {
     } else if (felicidad >= 20 && felicidad < 50) {
         nivel = 3;
     } else {
-        nivel = 0; 
+        nivel = 0;
     }
 
     switch (nivel) {
@@ -99,6 +99,22 @@ function evaluarFelicidad() {
     }
 }
 
-simularPasoDelTiempo(5);
+// simularPasoDelTiempo(5);
 revisarEstado();
 evaluarFelicidad();
+
+let mascotaViva = true;
+let contador = 0;
+
+while (mascotaViva) {
+    mostrarEstado();
+    revisarEstado();
+    simularPasoDelTiempo(5);
+
+    if (hambre === 0 || energia === 0 || felicidad === 0) {
+        console.log("La mascota ya no puede continuar...");
+        mascotaViva = false;
+    }
+
+    contador++;
+}
