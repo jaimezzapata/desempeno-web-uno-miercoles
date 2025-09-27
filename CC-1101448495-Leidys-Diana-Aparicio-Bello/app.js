@@ -43,5 +43,33 @@ function verificarNivel() {
     }
 }
 
-entrenar(12); 
+entrenar(12);
 verificarNivel();
+
+function elegirEnemigo(tipo) {
+    switch (tipo) {
+        case 1:
+            recibirDano(10);
+            console.log("Te enfrentas a un Goblin débil.");
+            break;
+        case 2:
+            recibirDano(25);
+            console.log("Un Orco te ha atacado.");
+            break;
+        case 3:
+            recibirDano(50);
+            console.log("¡Peligro! Un Dragón aparece.");
+            break;
+        default:
+            console.log("No apareció ningún enemigo.");
+    }
+}
+
+while (vidaHeroe > 0) {
+    const tipoEnemigo = Math.floor(Math.random() * 3) + 1;
+    elegirEnemigo(tipoEnemigo);
+    ganarExperiencia(15);
+    mostrarEstado();
+    console.log("======================");
+}
+console.log("El héroe ha caído en batalla. Fin de la aventura.");
