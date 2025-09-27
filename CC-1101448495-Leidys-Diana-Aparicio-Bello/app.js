@@ -22,3 +22,26 @@ const ganarExperiencia = (cantidadExperiencia) => {
 recibirDano(25);
 ganarExperiencia(50);
 mostrarEstado();
+
+const entrenar = (dias) => {
+    for (let i = 0; i < dias; i++) {
+        ganarExperiencia(5);
+    }
+    console.log("Entrenamiento completado.");
+}
+
+function verificarNivel() {
+    if (experienciaHeroe > 100) {
+        console.log("¡Felicidades! Has alcanzado el nivel de 'Maestro'.");
+        if (vidaHeroe < 50) {
+            console.log("Pero te encuentras débil. Sería prudente descansar.");
+        }
+    } else if (experienciaHeroe > 30) {
+        console.log("Nivel alcanzado: 'Aventurero'. ¡Sigue así!");
+    } else {
+        console.log("Nivel actual: 'Novato'.");
+    }
+}
+
+entrenar(12); 
+verificarNivel();
