@@ -62,3 +62,28 @@ simularVentas(7)
 // llamando la función revisarStock
 revisarStock()
 
+// Clasificar producto por precio
+function clasificarProducto() {
+    switch (true) {
+        case (precioProducto > 2000):
+            console.log("Clasificación: Producto Premium")
+            break
+        case (precioProducto > 500):
+            console.log("Clasificación: Producto de Gama Media")
+            break
+        default:
+            console.log("Clasificación: Producto de Entrada")
+    }
+}
+
+clasificarProducto()
+
+do {
+    mostrarInventario()
+    revisarStock()
+    registrarVenta(1)
+    console.log("--- Fin del ciclo de revisión ---")
+} while (stockProducto <= 0)
+console.log("Fin de la jornada. El producto se ha agotado.")
+
+
