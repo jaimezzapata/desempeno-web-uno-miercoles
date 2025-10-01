@@ -1,6 +1,6 @@
-let nombreProducto = "LapTopGamer"
+let nombreProducto = "ProductoEjemplo"
 let stockProducto = 10
-let precioProducto = 1500
+let precioProducto = 500
 
 function mostrarInventario(){
 console.log("Producto: ", nombreProducto, " | Stock : ", stockProducto," unidades | Precio: $", precioProducto)
@@ -8,8 +8,8 @@ console.log("Producto: ", nombreProducto, " | Stock : ", stockProducto," unidade
 
 let registrarVenta = function (cantidadVenta){
     if(cantidadVenta <= stockProducto){
-        cantidadVenta - stockProducto
-        console.log("Venta exitosa. Se añadieron " + cantidadVenta + " unidades de " + nombreProducto + ". Stock total: " + stockProducto);
+        stockProducto -= cantidadVenta;
+        console.log("Venta exitosa. Se vendieron " + cantidadVenta + " unidades de " + nombreProducto + ". Stock total: " + stockProducto);
     } 
 };
 
@@ -18,17 +18,18 @@ stockProducto += cantidadRepuesta;
 console.log("Stock repuesto. Se añadieron " + cantidadRepuesta + ". Stock total: " + stockProducto)
 };
 
-let simularVentas = (numeroDeVentas) => {
+const simularVentas = (numeroDeVentas) => {
     for (let i = 0; i < numeroDeVentas; i++ ){
         registrarVenta(1);
+        
     }
 };
 
 function revisarStock(){
-    if (stockProducto == 0){
+    if (stockProducto === 0){
         console.log("ALERTA CRÍTICA: Producto agotado.")
         alert("ALERTA CRÍTICA: Producto agotado.")
-    } else if(stockProducto >0 && stockProducto < 5) {
+    } else if(stockProducto > 0 && stockProducto < 5) {
         console.log("Advertencia: Stock bajo. Quedan solo " + stockProducto + " unidades.")
         alert("Advertencia: Stock bajo. Quedan solo " + stockProducto + " unidades.")
     }
@@ -41,14 +42,36 @@ function revisarStock(){
     }
 };
 
-simularVentas(7);
+function clasificarProducto() {
+    switch(true){
+        case precioProducto > 2000:
+            console.log("Clasificación: Producto Premium")
+            break;
+        case precioProducto > 500:
+            console.log("Clasificación: Producto de Gama Media")
+            break;
+        default:
+            console.log("Clasificación: Producto de Entrada")
+            break;
 
+    }
+
+};
+
+do {
+mostrarInventario();
 revisarStock();
+registrarVenta(1);
+} while (stockProducto > 0);
 
-registrarVenta(3);
 
-reponerStock(5);
+clasificarProducto();
+
+
 
 mostrarInventario();
-
-
+registrarVenta(3);
+reponerStock(5);
+mostrarInventario();
+simularVentas(7);
+revisarStock();
